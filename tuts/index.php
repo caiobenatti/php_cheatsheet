@@ -1,8 +1,8 @@
 <?php 
 
 //echo 'hello world';
-// $firstName = 'Caio';
-// $lastName = 'Benatti';
+$firstName = 'Caio';
+ $lastName = 'Benatti';
 
 // $products = [ 
 //     ['name' => 'shiny star', 'price' => 20],
@@ -13,14 +13,22 @@
 //     ['name' => 'banana skin', 'price' => 2],
 // ]
 
-function sayHello($name){
-    echo "Good morning $name";
+function sayHello($name = "there!", $time = "morning"){ // the second argument is the default in case the param is not passed
+    echo "Good $time, $name <br />";
 }
 
-sayHello('Teste');
+function formatProduct($product){
+    //echo "{$product['name']} costs £{$product['price']} to buy <br />"; // in this case, you need to wrap it around {} otherwise php doesnt understand it
+    return "{$product['name']} costs £{$product['price']} to buy <br />";
+}
+
+sayHello('caio', 'afternoon');
+
+$formatted = formatProduct(['name' => 'gold star' , 'price' => 20]);
+echo $formatted;
 
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +36,7 @@ sayHello('Teste');
     <title>PHP test</title>
 </head>
 <body>
-    
+<!--     
     <h1><?php echo "Hello $firstName $lastName, how are you today?";  ?></h1>
     <div>
     <ul>
@@ -38,7 +46,7 @@ sayHello('Teste');
             <?php } ?>
     <?php } ?>
     </ul>
-    </div>
+    </div> -->
 
 </body>
-</html> -->
+</html>
